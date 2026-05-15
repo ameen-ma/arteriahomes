@@ -21,9 +21,9 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="Arteria"
-            width={120}
-            height={80}
-            className="h-10 w-auto object-contain"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
           />
         </a>
 
