@@ -11,9 +11,9 @@ export function Footer() {
             <Image
               src="/logo.png"
               alt="Arteria"
-              width={48}
-              height={48}
-              className="h-12 w-auto object-contain brightness-0 invert"
+              width={120}
+              height={80}
+              className="h-10 w-auto object-contain"
             />
           </div>
           <p className="font-sans text-base leading-6 text-white/40 max-w-xs">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -7,6 +8,7 @@ const services = [
   {
     num: "01",
     title: "Residential Design",
+    image: "/services/residential-design.png",
     description:
       "Complete home transformations that reflect your personality and lifestyle. We craft bespoke living spaces with meticulous attention to materials, light, and spatial flow.",
     stats: [
@@ -17,6 +19,7 @@ const services = [
   {
     num: "02",
     title: "Commercial Spaces",
+    image: "/services/commercial-spaces.png",
     description:
       "Office and retail environments that elevate your brand presence. Strategic design that balances aesthetics with operational efficiency.",
     stats: [
@@ -27,6 +30,7 @@ const services = [
   {
     num: "03",
     title: "Space Planning",
+    image: "/services/space-planning.png",
     description:
       "Optimized layouts that maximize beauty and functionality. Data-driven spatial analysis for intelligent interior architecture.",
     stats: [
@@ -37,6 +41,7 @@ const services = [
   {
     num: "04",
     title: "Modular Interiors",
+    image: "/services/modular-interiors.png",
     description:
       "Precision-engineered modular kitchens and wardrobes delivered to exacting standards. Functional artistry for the modern Kerala home.",
     stats: [
@@ -151,16 +156,18 @@ export function Services() {
                 </div>
               </div>
 
-              {/* Image placeholder side */}
+              {/* Image side */}
               <div
                 className={`col-span-12 md:col-span-7 order-1 md:order-${isEven ? "2" : "1"}`}
               >
-                <div className="aspect-[16/10] bg-stone overflow-hidden border border-foreground/10 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-foreground/30">
-                      {service.title}
-                    </p>
-                  </div>
+                <div className="aspect-[16/10] overflow-hidden border border-foreground/10">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={800}
+                    height={500}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
