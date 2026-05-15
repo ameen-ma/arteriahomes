@@ -2,80 +2,165 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-const categories = ["All", "Residential", "Commercial", "Hospitality"];
+const categories = ["All", "Residential", "Commercial", "Hospitality", "Retail"];
 
 const projects = [
-  { id: 1, title: "Modern Villa", category: "Residential", color: "bg-stone-300" },
-  { id: 2, title: "Boutique Hotel Lobby", category: "Hospitality", color: "bg-stone-400" },
-  { id: 3, title: "Tech Startup Office", category: "Commercial", color: "bg-stone-200" },
-  { id: 4, title: "Penthouse Suite", category: "Residential", color: "bg-amber-100" },
-  { id: 5, title: "Restaurant Interior", category: "Hospitality", color: "bg-amber-200" },
-  { id: 6, title: "Co-Working Space", category: "Commercial", color: "bg-stone-300" },
+  {
+    id: 1,
+    title: "Kochi Waterfront Villa",
+    category: "Residential",
+    location: "Kochi, Kerala",
+    span: "md:col-span-8",
+    aspect: "aspect-[16/9]",
+    specs: "Natural Stone, Teak Wood",
+  },
+  {
+    id: 2,
+    title: "Tech Park Lobby",
+    category: "Commercial",
+    location: "Trivandrum, Kerala",
+    span: "md:col-span-4",
+    aspect: "aspect-[3/4]",
+    specs: "Polished Concrete, Glass",
+  },
+  {
+    id: 3,
+    title: "Boutique Hotel Suite",
+    category: "Hospitality",
+    location: "Calicut, Kerala",
+    span: "md:col-span-4",
+    aspect: "aspect-[3/4]",
+    specs: "Brass, Velvet, Marble",
+  },
+  {
+    id: 4,
+    title: "Premium Retail Showroom",
+    category: "Retail",
+    location: "Thrissur, Kerala",
+    span: "md:col-span-8",
+    aspect: "aspect-[16/9]",
+    specs: "Integrated LED, Floating Shelves",
+  },
+];
+
+const listProjects = [
+  {
+    id: 5,
+    title: "The Heritage Courtyard House",
+    category: "Residential",
+    location: "Kochi, Kerala",
+    specs: "Laterite, Reclaimed Wood",
+  },
+  {
+    id: 6,
+    title: "Modern Co-Working Hub",
+    category: "Commercial",
+    location: "Trivandrum, Kerala",
+    specs: "Exposed Concrete, Steel",
+  },
 ];
 
 export function Portfolio() {
   const [active, setActive] = useState("All");
 
-  const filtered =
+  const filteredGrid =
     active === "All"
       ? projects
       : projects.filter((p) => p.category === active);
 
+  const filteredList =
+    active === "All"
+      ? listProjects
+      : listProjects.filter((p) => p.category === active);
+
   return (
-    <section id="portfolio" className="py-16 md:py-24 lg:py-32 bg-primary text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="pt-[140px] pb-0 bg-background">
+      {/* Header */}
+      <div className="mx-auto max-w-[1440px] px-6 md:px-16 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
         >
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-2">
-            Our Work
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">
-            Featured Projects
+          <h2 className="font-serif text-[48px] leading-[52px] md:text-[80px] md:leading-[88px] md:-tracking-[0.02em] font-medium text-foreground">
+            Portfolio
           </h2>
+          <div className="h-px bg-foreground/20 w-full mt-4" />
         </motion.div>
+      </div>
 
-        {/* Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+      {/* Filter Bar */}
+      <div className="mx-auto max-w-[1440px] px-6 md:px-16 mb-16 md:mb-[120px]">
+        <div className="flex flex-wrap gap-8 overflow-x-auto pb-4 no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+              className={`font-sans text-xs font-bold uppercase tracking-[0.1em] pb-1 border-b-2 transition-colors ${
                 active === cat
-                  ? "bg-accent text-white"
-                  : "border border-white/20 text-white/70 hover:text-white hover:border-white/40"
+                  ? "text-foreground border-foreground"
+                  : "text-foreground/50 border-transparent hover:text-foreground"
               }`}
             >
               {cat}
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {filtered.map((project) => (
+      {/* Project Grid */}
+      <div className="mx-auto max-w-[1440px] px-6 md:px-16 mb-16 md:mb-[120px]">
+        <div className="grid grid-cols-12 gap-6">
+          {filteredGrid.map((project) => (
             <motion.div
               key={project.id}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className={`group relative aspect-[4/3] ${project.color} rounded-2xl overflow-hidden cursor-pointer`}
+              className={`col-span-12 ${project.span} group relative overflow-hidden bg-stone border border-foreground/10 ${project.aspect} cursor-pointer`}
             >
-              {/* Placeholder — replace with actual project images */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-                <p className="text-accent text-xs font-medium uppercase tracking-wider">
-                  {project.category}
+              <div className="w-full h-full bg-gradient-to-br from-stone to-foreground/5 transition-transform duration-700 group-hover:scale-105" />
+
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-500 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100">
+                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-white/70 mb-2">
+                    {project.category.toUpperCase()} — {project.location.toUpperCase()}
+                  </p>
+                  <h3 className="font-serif text-[32px] md:text-[48px] leading-10 md:leading-[56px] font-normal text-white mb-4">
+                    {project.title}
+                  </h3>
+                  <span className="inline-flex items-center gap-2 font-sans text-xs font-bold uppercase tracking-[0.1em] text-white border-b border-white pb-1">
+                    View Project <ArrowUpRight size={16} />
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Rule-line list items */}
+          {filteredList.map((project) => (
+            <motion.div
+              key={project.id}
+              layout
+              className="col-span-12 border-t border-foreground/20 pt-8 mt-8 group flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-stone/30 transition-colors p-4 cursor-pointer"
+            >
+              <div className="flex flex-col">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-foreground/50">
+                  {project.category.toUpperCase()} — {project.location.toUpperCase()}
                 </p>
-                <h3 className="text-white font-serif text-lg font-semibold">
+                <h3 className="font-serif text-[32px] leading-10 font-normal text-foreground">
                   {project.title}
                 </h3>
+              </div>
+              <div className="flex items-center gap-8 mt-4 md:mt-0">
+                <span className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-foreground/50">
+                  {project.specs}
+                </span>
+                <ArrowUpRight className="text-primary" size={20} />
               </div>
             </motion.div>
           ))}

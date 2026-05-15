@@ -8,67 +8,74 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center bg-primary text-white"
+      className="relative flex min-h-screen items-center bg-background"
     >
       <Image
         src="/hero-banner.png"
         alt="Arteria Home Interiors — Luxury interior design"
         fill
-        className="object-cover"
+        className="object-cover grayscale"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90" />
+      <div className="absolute inset-0 bg-charcoal/70" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-accent text-sm font-medium tracking-widest uppercase mb-4"
-        >
-          Luxury Interior Design
-        </motion.p>
+      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-6 md:px-16 pt-32 pb-16">
+        <div className="grid grid-cols-12 gap-6 items-end">
+          <div className="col-span-12 md:col-span-8">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-primary-container mb-4"
+            >
+              Luxury Interior Design
+            </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
-        >
-          Spaces That Tell
-          <br />
-          <span className="text-accent">Your Story</span>
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-serif text-[48px] leading-[52px] tracking-tight md:text-[80px] md:leading-[88px] md:-tracking-[0.02em] font-medium text-white max-w-4xl"
+            >
+              Spaces That Tell
+              <br />
+              Your Story
+            </motion.h1>
+          </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-6 max-w-2xl mx-auto text-lg text-white/70"
-        >
-          We transform ordinary spaces into extraordinary experiences. Bespoke
-          interior design crafted for those who appreciate the finest details.
-        </motion.p>
+          <div className="col-span-12 md:col-span-4 pb-2">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-sans text-lg leading-7 text-white/70"
+            >
+              We don&apos;t just design spaces; we craft environments that
+              define the next generation of architectural integrity and interior
+              artistry.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <a
-            href="#portfolio"
-            className="rounded-full bg-accent px-8 py-3 text-sm font-medium text-white hover:bg-accent-light transition-colors"
-          >
-            View Our Work
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-white/30 px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors"
-          >
-            Start Your Transformation
-          </a>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-8 flex flex-col sm:flex-row gap-4"
+            >
+              <a
+                href="#portfolio"
+                className="inline-flex items-center justify-center bg-white text-charcoal px-8 py-4 font-sans text-xs font-bold uppercase tracking-widest hover:bg-primary-container transition-colors duration-300"
+              >
+                View Our Work
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 font-sans text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors duration-300"
+              >
+                Book a Consultation
+              </a>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       <motion.div

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#303030",
+                    "secondary": "#006a69",
+                    "surface-bright": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#752e00",
+                    "primary-fixed": "#61fae2",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#00201b",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#341000",
+                    "surface-container-high": "#eae7e7",
+                    "primary": "#006b5e",
+                    "outline-variant": "#bacac5",
+                    "background": "#fcf9f8",
+                    "surface-tint": "#006b5e",
+                    "on-primary-container": "#004d44",
+                    "on-surface-variant": "#3c4a46",
+                    "secondary-fixed": "#93f2f1",
+                    "inverse-primary": "#3addc6",
+                    "on-secondary": "#ffffff",
+                    "outline": "#6b7a76",
+                    "on-background": "#1b1c1c",
+                    "tertiary-fixed-dim": "#ffb693",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7a3000",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-container": "#006e6d",
+                    "surface-container-lowest": "#ffffff",
+                    "charcoal-dark": "#1A1A1A",
+                    "surface-container": "#f0eded",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-container": "#ff9660",
+                    "primary-container": "#00c7b1",
+                    "pure-white": "#FFFFFF",
+                    "on-secondary-fixed": "#002020",
+                    "stone-base": "#EAE7DF",
+                    "on-secondary-fixed-variant": "#00504f",
+                    "secondary-container": "#90f0ee",
+                    "on-primary-fixed-variant": "#005047",
+                    "on-surface": "#1b1c1c",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-fixed-dim": "#76d6d4",
+                    "primary-fixed-dim": "#3addc6",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface": "#fcf9f8",
+                    "tertiary": "#994717"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-padding": "120px",
+                    "grid-margin": "64px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "grid-gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "body-md": ["Hanken Grotesk", "sans-serif"],
+                    "label-caps": ["Hanken Grotesk", "sans-serif"],
+                    "headline-md": ["EB Garamond", "serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "display-xl": ["EB Garamond", "serif"],
+                    "body-lg": ["Hanken Grotesk", "sans-serif"],
+                    "stats-num": ["Hanken Grotesk", "sans-serif"],
+                    "display-xl-mobile": ["EB Garamond", "serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "stats-num": ["24px", {"lineHeight": "32px", "fontWeight": "300"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { background-color: #fcf9f8; color: #1b1c1c; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-on-background/10">
+<div class="flex justify-between items-center px-grid-margin py-stack-md w-full max-w-[1440px] mx-auto">
+<img alt="Arteria Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uiXVoe3S6v7cnlFcyTWoJJloHxZMcf3T2sXcvOKWHh6AvJc1AZp-3s4giPVYoBFqB-3EILL9MtL07Sl3-nFvz8s_XOND0Wauiyk_tPrsmbM2kkgHiSJH3iAKkFTJrMGegIWGMkk90oXlyv9Pa7COsciNEbr2j1Hkn7xdfEGFLpAJuY7fAe0qkcw4Yhze75rsnnqtvOg4e23LvZ1l-UiO0bD__nQRBJfAtDi4UHoauUK6EfmF8WzgY5VWQY"/>
+<div class="hidden md:flex gap-grid-gutter items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b border-primary pb-1" href="#">Services</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">Insights</a>
+</div>
+<button class="bg-charcoal-dark text-pure-white px-stack-lg py-3 uppercase text-label-caps font-label-caps hover:opacity-80 transition-opacity duration-300">
+                Book a Consultation
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-[160px] pb-section-padding px-grid-margin w-full max-w-[1440px] mx-auto">
+<div class="grid grid-cols-12 gap-grid-gutter items-end">
+<div class="col-span-12 md:col-span-8">
+<p class="font-label-caps text-label-caps uppercase text-primary mb-stack-md">Expertise &amp; Innovation</p>
+<h1 class="font-display-xl text-display-xl md:font-display-xl md:text-display-xl text-on-background max-w-4xl">
+                    Defining the intersection of architecture and human performance.
+                </h1>
+</div>
+<div class="col-span-12 md:col-span-4 pb-2">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    We don’t just design spaces; we engineer environments that drive measurable ROI and elevate the architectural legacy of our clients.
+                </p>
+</div>
+</div>
+</header>
+<!-- Core Services Breakdown -->
+<main class="w-full max-w-[1440px] mx-auto">
+<!-- Service 01: Workplace Strategy -->
+<section class="border-t border-on-background/10 py-section-padding px-grid-margin">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center">
+<span class="font-stats-num text-stats-num text-primary mb-4">01.</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg">Workplace Strategy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                        Data-driven insights that define how your business moves. We analyze spatial utilization and organizational behavior to deliver a blueprint for optimized productivity and culture retention.
+                    </p>
+<div class="grid grid-cols-2 gap-stack-lg border-t border-on-background/10 pt-stack-lg">
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">ROI Metric</p>
+<p class="font-stats-num text-stats-num">+22% Efficiency</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Focus Area</p>
+<p class="font-stats-num text-stats-num">Occupancy Data</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2">
+<div class="aspect-[16/10] bg-stone-base overflow-hidden border border-on-background/10">
+<img alt="Workplace Strategy Illustration" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A minimalist, high-contrast architectural photograph of a modern office blueprint overlaying a brightly lit open-plan workplace. The lighting is soft and clinical, highlighting the clean lines of glass partitions and stone floors. The aesthetic is professional and data-driven, using a palette of whites, light greys, and subtle teal accents to reflect Arteria's architectural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6A8ZcFxCxVpCfNqdz1yhRJldGw02WmvtEtbrCXSEql4bwcOzivVFr_e0IeFdGAwmi-LaAqED9X8_19ttGfKStXrDG2mzVPJhQTbV1RVnZG6VTldlXAVJq2ihxn83kRyad9QcYjbb9zvGdhDtD1aoMoIS1XalOMvdh8XbRmkda0qCA_QjZ6mxq81f4JSM14XOXNdXTR1ikbM-LSw3UoQqLZr9IBWSqWeeQC3z5pnvqI48teSuWxhzWrnnDuB0p-tW_q4fzEROcCxM"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Service 02: Design & Build -->
+<section class="border-t border-on-background/10 py-section-padding px-grid-margin">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-7">
+<div class="aspect-[16/10] bg-stone-base overflow-hidden border border-on-background/10">
+<img alt="Design &amp; Build Architecture" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A detailed architectural close-up of a perfectly mitered joint between a natural oak panel and a smooth dark charcoal metal beam. The lighting is dramatic and directional, emphasizing the texture of the grain and the matte finish of the metal. The composition is strictly aligned to a grid, embodying the brand's commitment to craft and technical rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmBZm5zLxvjfKlPjviSwzo6GWDDEgQ-68xvyvmilklAaavrRubwFrdVY0Jt_b9PszPj6peJIkd7k3_8H-4oIVh9luymrIC9bV2_Bx-__CE3INFoGcZX2z1rb01ZGodXuANL5JJ1jgv6Aejs7scjM1JkO9aQKxszvcHNE-uLWAuDf91PJxyUMS6i5Lxu54v0LtRq7wTMna2SB8gnBwyc5TNAT8itLHkYfTTrS2qfoJIlveOeEftM-LP_yyWxKnDN4_SohhlFhDvNeY"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center">
+<span class="font-stats-num text-stats-num text-primary mb-4">02.</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg">Design &amp; Build</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                        Our integrated approach eliminates the friction between vision and execution. We manage the entire lifecycle of a project, ensuring architectural integrity is never sacrificed for feasibility.
+                    </p>
+<div class="grid grid-cols-2 gap-stack-lg border-t border-on-background/10 pt-stack-lg">
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Transparency</p>
+<p class="font-stats-num text-stats-num">Open Ledger</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Timeline</p>
+<p class="font-stats-num text-stats-num">End-to-End</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service 03: Fit Out -->
+<section class="border-t border-on-background/10 py-section-padding px-grid-margin">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center">
+<span class="font-stats-num text-stats-num text-primary mb-4">03.</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg">Fit Out</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                        Precision-engineered interiors delivered to exacting standards. We specialize in Cat A and Cat B fit-outs for prestigious commercial addresses, focusing on technical excellence and acoustic performance.
+                    </p>
+<div class="grid grid-cols-2 gap-stack-lg border-t border-on-background/10 pt-stack-lg">
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Standard</p>
+<p class="font-stats-num text-stats-num">Technical Tier 1</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Acoustics</p>
+<p class="font-stats-num text-stats-num">-45dB Isolation</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2">
+<div class="aspect-[16/10] bg-stone-base overflow-hidden border border-on-background/10">
+<img alt="Commercial Fit Out" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="An expansive view of a luxury office interior under construction with high-end materials visible. The scene features exposed architectural structural elements, pristine white walls, and floor-to-ceiling glass. The lighting is a mix of natural daylight and warm focused construction lamps, creating a mood of progress and professional craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx_VcXjuRiy7xp7sn2dj6nH-Zw9hlFjWdKOV-iA4EOswE-qndNi3terRjxDyvbNvS5snZZCQVCKJdvNrHckzNEZ3CRMnZqi9qFpROeOZx7xAuJeHoWegWyTjN840fvuUfLEwo8NMUC-1-AABqu7KVx0hfEa0yYC0QWrY9itixb80PoiSK4HiOA9eayl_ais0gEbsCrcd5i8FMOmOcptA_F6NBDfJ7D8gB_CN_FrxVDDOPAONFU5xJP2asZqUdfDzLgE0i-1_ftcYo"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Service 04: Furniture -->
+<section class="border-t border-on-background/10 py-section-padding px-grid-margin">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-7">
+<div class="aspect-[16/10] bg-stone-base overflow-hidden border border-on-background/10">
+<img alt="Bespoke Furniture Detail" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A minimalist architectural furniture piece, a bespoke desk made of honed travertine stone and brushed brass. The piece is set in a gallery-like environment with soft, indirect lighting that highlights the stone's porous texture and the metallic sheen. The composition is clean and centered, emphasizing the sculptural quality of architectural furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Uub4ncas6CW6Jpc6FjcDQLkwdSQPjLMM6s75l_CApF2se72RnzFFYWt9mrTl_QU6e8lTyRNH5VbYXsBnZafRNaOpi8DuJF6A7BAs0UZU2R1p3lO2w6iixPMSURB4kLi-KmsYxtpIUiZsofmYldTWuh62HDcRqkkoHt2t7dDlJ9KYZYrWY56H7gfrklNwc-LRitPbXEyh7h82BygLQh2SOs7w3nWusI_RjRKz6_4IIQeGDie3_M58orRG4O7d8i_rflYynooTZX8"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center">
+<span class="font-stats-num text-stats-num text-primary mb-4">04.</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg">Furniture</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                        Curation and bespoke fabrication. We source iconic pieces from global partners and design custom furniture that integrates seamlessly into the architectural fabric of your space.
+                    </p>
+<div class="grid grid-cols-2 gap-stack-lg border-t border-on-background/10 pt-stack-lg">
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Procurement</p>
+<p class="font-stats-num text-stats-num">Global Access</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Custom</p>
+<p class="font-stats-num text-stats-num">In-house Studio</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Timeline -->
+<section class="bg-charcoal-dark text-pure-white py-section-padding px-grid-margin">
+<div class="w-full max-w-[1440px] mx-auto">
+<div class="mb-stack-lg">
+<p class="font-label-caps text-label-caps uppercase text-primary mb-4">The Methodology</p>
+<h2 class="font-headline-lg text-headline-lg text-surface-bright">The Arteria Process</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter mt-stack-lg">
+<!-- Step 1 -->
+<div class="relative pt-stack-lg border-t border-surface-bright/20">
+<span class="absolute -top-3 left-0 bg-primary text-on-primary-container px-2 py-1 text-[10px] font-bold uppercase tracking-widest">Phase 01</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Strategy</h3>
+<p class="font-body-md text-body-md text-surface-bright/70">Deep-dive analysis of your current assets, culture, and growth projections to define the spatial requirements.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pt-stack-lg border-t border-surface-bright/20">
+<span class="absolute -top-3 left-0 bg-primary text-on-primary-container px-2 py-1 text-[10px] font-bold uppercase tracking-widest">Phase 02</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Concept</h3>
+<p class="font-body-md text-body-md text-surface-bright/70">Transforming data into vision. Iterative design sessions using VR and 3D modeling for total transparency.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pt-stack-lg border-t border-surface-bright/20">
+<span class="absolute -top-3 left-0 bg-primary text-on-primary-container px-2 py-1 text-[10px] font-bold uppercase tracking-widest">Phase 03</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Delivery</h3>
+<p class="font-body-md text-body-md text-surface-bright/70">Rigorous on-site management. We maintain 100% visibility on budgets and schedules via our digital portal.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative pt-stack-lg border-t border-surface-bright/20">
+<span class="absolute -top-3 left-0 bg-primary text-on-primary-container px-2 py-1 text-[10px] font-bold uppercase tracking-widest">Phase 04</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Evolution</h3>
+<p class="font-body-md text-body-md text-surface-bright/70">Post-occupancy evaluation and ongoing optimization to ensure the space continues to perform at peak efficiency.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Radical Transparency Banner -->
+<section class="py-section-padding px-grid-margin">
+<div class="border border-on-background/10 p-stack-lg md:p-section-padding text-center">
+<h3 class="font-headline-lg text-headline-lg mb-stack-lg">Architectural integrity, quantified.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">
+                    We believe in radical transparency. Every project is tracked via an open-book policy, giving you real-time access to every cost, every lead time, and every decision.
+                </p>
+<div class="flex justify-center gap-grid-gutter flex-wrap">
+<div class="px-stack-lg border-r border-on-background/10 last:border-0">
+<p class="font-stats-num text-display-xl-mobile text-primary font-bold">100%</p>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Open-Ledger</p>
+</div>
+<div class="px-stack-lg border-r border-on-background/10 last:border-0">
+<p class="font-stats-num text-display-xl-mobile text-primary font-bold">0%</p>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Hidden Fees</p>
+</div>
+<div class="px-stack-lg border-r border-on-background/10 last:border-0">
+<p class="font-stats-num text-display-xl-mobile text-primary font-bold">24/7</p>
+<p class="font-label-caps text-label-caps uppercase text-on-background/50">Client Portal</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full pt-section-padding pb-stack-lg">
+<div class="grid grid-cols-12 gap-grid-gutter px-grid-margin w-full max-w-[1440px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-stack-lg md:mb-0">
+<img alt="Arteria Logo" class="h-12 w-auto mb-stack-md" src="https://lh3.googleusercontent.com/aida/ADBb0uiXVoe3S6v7cnlFcyTWoJJloHxZMcf3T2sXcvOKWHh6AvJc1AZp-3s4giPVYoBFqB-3EILL9MtL07Sl3-nFvz8s_XOND0Wauiyk_tPrsmbM2kkgHiSJH3iAKkFTJrMGegIWGMkk90oXlyv9Pa7COsciNEbr2j1Hkn7xdfEGFLpAJuY7fAe0qkcw4Yhze75rsnnqtvOg4e23LvZ1l-UiO0bD__nQRBJfAtDi4UHoauUK6EfmF8WzgY5VWQY"/>
+<p class="font-body-md text-body-md text-surface-variant/60 max-w-xs">
+                    Architectural Interiors &amp; Strategic Environments for the modern enterprise.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col gap-stack-sm">
+<p class="font-body-md text-body-md text-surface-bright">London Office: 22 Savile Row, W1S 3PR</p>
+<p class="font-body-md text-body-md text-surface-bright">Manchester Office: 101 Deansgate, M3 2BQ</p>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col md:items-end gap-stack-sm">
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+<p class="font-body-md text-body-md text-surface-variant/60 mt-stack-md">© 2024 Arteria Architectural Interiors. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

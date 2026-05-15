@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&amp;family=Hanken+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #fcf9f8;
+            color: #1b1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #006b5e;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#303030",
+                      "secondary": "#006a69",
+                      "surface-bright": "#fcf9f8",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#752e00",
+                      "primary-fixed": "#61fae2",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#00201b",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#341000",
+                      "surface-container-high": "#eae7e7",
+                      "primary": "#006b5e",
+                      "outline-variant": "#bacac5",
+                      "background": "#fcf9f8",
+                      "surface-tint": "#006b5e",
+                      "on-primary-container": "#004d44",
+                      "on-surface-variant": "#3c4a46",
+                      "secondary-fixed": "#93f2f1",
+                      "inverse-primary": "#3addc6",
+                      "on-secondary": "#ffffff",
+                      "outline": "#6b7a76",
+                      "on-background": "#1b1c1c",
+                      "tertiary-fixed-dim": "#ffb693",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#7a3000",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-container": "#006e6d",
+                      "surface-container-lowest": "#ffffff",
+                      "charcoal-dark": "#1A1A1A",
+                      "surface-container": "#f0eded",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary-container": "#ff9660",
+                      "primary-container": "#00c7b1",
+                      "pure-white": "#FFFFFF",
+                      "on-secondary-fixed": "#002020",
+                      "stone-base": "#EAE7DF",
+                      "on-secondary-fixed-variant": "#00504f",
+                      "secondary-container": "#90f0ee",
+                      "on-primary-fixed-variant": "#005047",
+                      "on-surface": "#1b1c1c",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-fixed-dim": "#76d6d4",
+                      "primary-fixed-dim": "#3addc6",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface": "#fcf9f8",
+                      "tertiary": "#994717"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "section-padding": "120px",
+                      "grid-margin": "64px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "grid-gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["ebGaramond"],
+                      "body-md": ["hankenGrotesk"],
+                      "label-caps": ["hankenGrotesk"],
+                      "headline-md": ["ebGaramond"],
+                      "headline-lg-mobile": ["ebGaramond"],
+                      "display-xl": ["ebGaramond"],
+                      "body-lg": ["hankenGrotesk"],
+                      "stats-num": ["hankenGrotesk"],
+                      "display-xl-mobile": ["ebGaramond"]
+              },
+              "fontSize": {
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "stats-num": ["24px", {"lineHeight": "32px", "fontWeight": "300"}],
+                      "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-on-background/10">
+<div class="flex justify-between items-center px-grid-margin py-stack-md w-full max-w-[1440px] mx-auto">
+<div class="flex items-center"><img alt="Arteria Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiXVoe3S6v7cnlFcyTWoJJloHxZMcf3T2sXcvOKWHh6AvJc1AZp-3s4giPVYoBFqB-3EILL9MtL07Sl3-nFvz8s_XOND0Wauiyk_tPrsmbM2kkgHiSJH3iAKkFTJrMGegIWGMkk90oXlyv9Pa7COsciNEbr2j1Hkn7xdfEGFLpAJuY7fAe0qkcw4Yhze75rsnnqtvOg4e23LvZ1l-UiO0bD__nQRBJfAtDi4UHoauUK6EfmF8WzgY5VWQY"/></div>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b border-primary pb-1" href="#">Projects</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-background/70 hover:text-on-background transition-colors" href="#">Insights</a>
+</div>
+<button class="bg-on-background text-pure-white px-stack-lg py-3 font-label-caps uppercase hover:opacity-80 transition-opacity duration-300">
+                Book a Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-[140px]">
+<!-- Page Header -->
+<header class="px-grid-margin max-w-[1440px] mx-auto mb-stack-lg">
+<h1 class="font-display-xl text-display-xl max-md:font-display-xl-mobile max-md:text-display-xl-mobile text-on-background">Portfolio</h1>
+<div class="h-px bg-on-background/20 w-full mt-stack-md"></div>
+</header>
+<!-- Filter Bar -->
+<section class="px-grid-margin max-w-[1440px] mx-auto mb-section-padding">
+<div class="flex flex-wrap gap-stack-lg overflow-x-auto pb-4 no-scrollbar">
+<button class="font-label-caps text-on-background border-b-2 border-on-background pb-1">All</button>
+<button class="font-label-caps text-on-background/50 hover:text-on-background transition-colors border-b-2 border-transparent pb-1">Office</button>
+<button class="font-label-caps text-on-background/50 hover:text-on-background transition-colors border-b-2 border-transparent pb-1">Hospitality</button>
+<button class="font-label-caps text-on-background/50 hover:text-on-background transition-colors border-b-2 border-transparent pb-1">Residential</button>
+<button class="font-label-caps text-on-background/50 hover:text-on-background transition-colors border-b-2 border-transparent pb-1">Retail</button>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="px-grid-margin max-w-[1440px] mx-auto mb-section-padding">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<!-- Project Card 1 (Large Span) -->
+<div class="col-span-12 md:col-span-8 group relative overflow-hidden bg-stone-base border border-on-background/10 aspect-[16/9]">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end modern minimalist living space featuring floor-to-ceiling windows, natural stone flooring, and warm wood accents. The lighting is soft and golden, emphasizing the architectural precision and the high-fidelity textures of the interior materials. The overall mood is sophisticated and tranquil, rendered in a luxury editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMGkfX1-6YtaPtWwUfbS7N8duHcRNywgzAFrGEqX1FFiV-hw7N5MM0zceRkxM20ssoWpCb9A148b_iJjhhjSZ8bkYSv4hSpnds41q6HtFDIyDcSBlqzLf4MZmYkYrMaSDcNlB9j4Yo5CIHSkGn7gDvG1FtRD3jy7glI6yBe_6RsapKXLxNiAJYR1XaNtvH6m6g_r9evGcvuBYQA8-b5IJKzoYtDO7LtiWFmHuS9VEpPXNk2l5YV9EeEH55pfZtkR47bYMmD-EpVj8"/>
+<div class="absolute inset-0 bg-charcoal-dark/0 group-hover:bg-charcoal-dark/40 transition-colors duration-500 flex flex-col justify-end p-stack-lg opacity-0 group-hover:opacity-100">
+<div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="font-label-caps text-pure-white/70 mb-2">RESIDENTIAL — LONDON</p>
+<h3 class="font-headline-lg text-headline-lg text-pure-white mb-stack-md">Savile Row Penthouse</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-pure-white border-b border-pure-white pb-1 group/link" href="#">
+                                VIEW PROJECT <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden bg-stone-base border border-on-background/10 aspect-[3/4]">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated corporate office lobby with seamless glass walls, polished concrete pillars, and a sculptural reception desk made of dark charcoal marble. The lighting is bright and even, highlighting the clean lines and industrial-chic aesthetic. The atmosphere is professional and authoritative, captured in a crisp architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5pP7tkBn7w0iq8sriOEcoy9HDjo_znUPUsahph-B_dxtmiVdJSVMUORrSHZKtNSGGNhihKpNdvQD1O56Um42v1_HFSr-fQAmcEPaHB0igTEZTuy-HmpBNv7NfgUR3xNkNBye_AyAp9HN5Dj9bbhYZELfKjNjD9voUoz7yhshot3nUyspQQF6l3rwOIdfKNfcqipAfUrpJMS3S_b4AQVk3saNg5PE-Q_cFCNIXfzJW8qHZrkMjZwLW-KwpdCGcIZNGxD1KiWbjvPc"/>
+<div class="absolute inset-0 bg-charcoal-dark/0 group-hover:bg-charcoal-dark/40 transition-colors duration-500 flex flex-col justify-end p-stack-lg opacity-0 group-hover:opacity-100">
+<div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="font-label-caps text-pure-white/70 mb-2">OFFICE — MANCHESTER</p>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-stack-md">The Deansgate Hub</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-pure-white border-b border-pure-white pb-1" href="#">
+                                VIEW PROJECT <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden bg-stone-base border border-on-background/10 aspect-[3/4]">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxury hotel lounge featuring bespoke velvet seating in teal and brass lighting fixtures. The architecture utilizes arched doorways and intricate ceiling details. The lighting is moody and intimate, with deep shadows and soft highlights, creating a warm, hospitable atmosphere typical of high-end boutique hotels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVhszVU75SM645xnB8i-P8OZOSKy3l0nuwWakM92D3gY-jHvAtZyvkoRzJt5H6kxfWZQTChxzWftEC8OzGgu5IOkIohwKhhqul3_USq3aZCz2cqJ2LQ9ePVL2hiqRCf6lLyehsU1umGx1cJQyGonRl2epkgkog7r_g2OoqQJB1MuboIDAPCog7ntNht_GBnlhy1y1rfTJUPeiWM_xy-aYKariOkSx2bBw_Ms0FT1tZa9JIS4tJHjrJ7vDQiTXvrdFVV-MwAnZWq78"/>
+<div class="absolute inset-0 bg-charcoal-dark/0 group-hover:bg-charcoal-dark/40 transition-colors duration-500 flex flex-col justify-end p-stack-lg opacity-0 group-hover:opacity-100">
+<div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="font-label-caps text-pure-white/70 mb-2">HOSPITALITY — PARIS</p>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-stack-md">L'Hôtel de Verre</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-pure-white border-b border-pure-white pb-1" href="#">
+                                VIEW PROJECT <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 4 (Asymmetric Alignment) -->
+<div class="col-span-12 md:col-span-8 group relative overflow-hidden bg-stone-base border border-on-background/10 aspect-[16/9]">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An upscale retail environment with minimalist floating shelves and integrated LED lighting strips. The interior features a neutral palette of off-white and light grey, with a single feature wall of textured natural stone. The lighting is sharp and directional, showcasing the high-end products in a gallery-like setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClDN2HM6R0e_VNXJjlk0-VJTwnssnhsHUZtZukwULrLqxZWeRcrhEY5cjdVd3q1HA2l-RNsqsyaZbpcAYgpQG_-BGdJmH9ls7_gyaF4oUlNxb4k-CsivOowTjBzD6HSkJ-ivIYidvIhGo8-o-fUr3Ta5nvTU0kyVXJ-aGrYwo6NCX5D9QX4JeYXm6h9clWbiQHldiokjWV60dFbOpplTfyyBTymNmWqKqZZmRndBkiaYUXF_l_cr9oV95cKia4HypgLP7-LSMT8xU"/>
+<div class="absolute inset-0 bg-charcoal-dark/0 group-hover:bg-charcoal-dark/40 transition-colors duration-500 flex flex-col justify-end p-stack-lg opacity-0 group-hover:opacity-100">
+<div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="font-label-caps text-pure-white/70 mb-2">RETAIL — NEW YORK</p>
+<h3 class="font-headline-lg text-headline-lg text-pure-white mb-stack-md">Continuum Flagship</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-pure-white border-b border-pure-white pb-1" href="#">
+                                VIEW PROJECT <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 5 (Rule Line Style Item) -->
+<div class="col-span-12 border-t border-on-background/20 pt-stack-lg mt-stack-lg group flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-stone-base/30 transition-colors p-stack-md cursor-pointer">
+<div class="flex flex-col">
+<p class="font-label-caps text-on-background/50">RESIDENTIAL — COTSWOLDS</p>
+<h3 class="font-headline-md text-headline-md text-on-background">The Stone Barn Conversion</h3>
+</div>
+<div class="flex items-center gap-stack-lg mt-stack-md md:mt-0">
+<span class="font-label-caps text-on-background/70">ARCHITECTURAL SPECS: NATURAL SLATE, RECLAIMED OAK</span>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="col-span-12 border-t border-on-background/20 pt-stack-lg group flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-stone-base/30 transition-colors p-stack-md cursor-pointer">
+<div class="flex flex-col">
+<p class="font-label-caps text-on-background/50">OFFICE — BERLIN</p>
+<h3 class="font-headline-md text-headline-md text-on-background">Vertex Creative Studio</h3>
+</div>
+<div class="flex items-center gap-stack-lg mt-stack-md md:mt-0">
+<span class="font-label-caps text-on-background/70">ARCHITECTURAL SPECS: POLISHED CONCRETE, EXPOSED STEEL</span>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="w-full bg-charcoal-dark py-section-padding px-grid-margin mt-section-padding">
+<div class="max-w-[1440px] mx-auto flex flex-col items-center text-center">
+<h2 class="font-display-xl text-display-xl max-md:font-display-xl-mobile max-md:text-display-xl-mobile text-pure-white mb-stack-lg">Experience Precision Firsthand</h2>
+<p class="font-body-lg text-body-lg text-pure-white/70 max-w-2xl mb-section-padding">
+                    Visit our studio or one of our live project sites to witness the intersection of architectural rigor and interior artistry.
+                </p>
+<button class="bg-pure-white text-charcoal-dark px-12 py-5 font-label-caps uppercase tracking-widest hover:bg-primary-fixed transition-colors duration-500">
+                    Book a Tour
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface w-full pt-section-padding pb-stack-lg">
+<div class="grid grid-cols-12 gap-grid-gutter px-grid-margin w-full max-w-[1440px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-stack-lg">
+<div class="mb-stack-md"><img alt="Arteria Logo" class="h-12 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0uiXVoe3S6v7cnlFcyTWoJJloHxZMcf3T2sXcvOKWHh6AvJc1AZp-3s4giPVYoBFqB-3EILL9MtL07Sl3-nFvz8s_XOND0Wauiyk_tPrsmbM2kkgHiSJH3iAKkFTJrMGegIWGMkk90oXlyv9Pa7COsciNEbr2j1Hkn7xdfEGFLpAJuY7fAe0qkcw4Yhze75rsnnqtvOg4e23LvZ1l-UiO0bD__nQRBJfAtDi4UHoauUK6EfmF8WzgY5VWQY"/></div>
+<p class="font-body-md text-body-md text-surface-variant/60">Crafting spaces that define the next generation of architectural integrity.</p>
+</div>
+<div class="col-span-6 md:col-span-2 flex flex-col gap-stack-sm">
+<p class="font-label-caps text-surface-bright mb-stack-sm">PROJECTS</p>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Residential</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Commercial</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Hospitality</a>
+</div>
+<div class="col-span-6 md:col-span-2 flex flex-col gap-stack-sm">
+<p class="font-label-caps text-surface-bright mb-stack-sm">STUDIO</p>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">About Us</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Insights</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Careers</a>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col gap-stack-sm">
+<p class="font-label-caps text-surface-bright mb-stack-sm">CONTACT</p>
+<p class="font-body-md text-body-md text-surface-variant/60">London Office: 22 Savile Row, W1S 3PR</p>
+<p class="font-body-md text-body-md text-surface-variant/60">Manchester Office: 101 Deansgate, M3 2BQ</p>
+</div>
+<div class="col-span-12 border-t border-on-background/20 mt-section-padding pt-stack-lg flex flex-col md:flex-row justify-between">
+<p class="font-body-md text-body-md text-surface-variant/60">© 2024 Arteria Architectural Interiors. All rights reserved.</p>
+<div class="flex gap-stack-lg mt-stack-sm md:mt-0">
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant/60 hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

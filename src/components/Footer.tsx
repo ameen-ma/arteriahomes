@@ -1,106 +1,122 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const footerLinks = {
-  services: [
-    { label: "Residential Design", href: "#services" },
-    { label: "Commercial Spaces", href: "#services" },
-    { label: "Space Planning", href: "#services" },
-    { label: "Consultation", href: "#contact" },
-  ],
-  company: [
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Contact", href: "#contact" },
-  ],
-};
-
 export function Footer() {
   return (
-    <footer className="bg-primary text-white/70">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="Arteria Home Interiors"
-                width={120}
-                height={120}
-                className="rounded-sm"
-              />
-              <span className="font-[var(--font-orbitron)] text-2xl font-bold text-white">
-                Arteria
-              </span>
-            </a>
-            <p className="mt-3 text-sm leading-relaxed max-w-xs">
-              Bespoke interior design and architecture for those who appreciate
-              the finest details.
-            </p>
+    <footer className="bg-inverse-surface w-full pt-16 md:pt-[120px] pb-8">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-16 grid grid-cols-12 gap-6">
+        {/* Brand */}
+        <div className="col-span-12 md:col-span-4 mb-8">
+          <div className="mb-4">
+            <Image
+              src="/logo.png"
+              alt="Arteria"
+              width={48}
+              height={48}
+              className="h-12 w-auto object-contain brightness-0 invert"
+            />
           </div>
+          <p className="font-sans text-base leading-6 text-white/40 max-w-xs">
+            Crafting spaces that define the next generation of architectural
+            integrity across Kerala.
+          </p>
+        </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        {/* Projects Links */}
+        <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+          <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-white mb-2">
+            Projects
+          </p>
+          <a
+            href="#portfolio"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            Residential
+          </a>
+          <a
+            href="#portfolio"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            Commercial
+          </a>
+          <a
+            href="#portfolio"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            Hospitality
+          </a>
+        </div>
+
+        {/* Studio Links */}
+        <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+          <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-white mb-2">
+            Studio
+          </p>
+          <a
+            href="#services"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+          >
+            Contact
+          </a>
+        </div>
+
+        {/* Contact Info */}
+        <div className="col-span-12 md:col-span-4 flex flex-col gap-2">
+          <p className="font-sans text-xs font-bold uppercase tracking-[0.1em] text-white mb-2">
+            Contact
+          </p>
+          <div className="flex items-start gap-2">
+            <Mail size={16} className="mt-0.5 shrink-0 text-primary-container" />
+            <span className="font-sans text-base text-white/40">
+              hello@arteria.design
+            </span>
           </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Company
-            </h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="flex items-start gap-2">
+            <Phone size={16} className="mt-0.5 shrink-0 text-primary-container" />
+            <span className="font-sans text-base text-white/40">
+              +91 484 000 0000
+            </span>
           </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Contact
-            </h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm">
-                <Mail size={16} className="mt-0.5 shrink-0 text-accent" />
-                <span>hello@arteria.design</span>
-              </li>
-              <li className="flex items-start gap-2 text-sm">
-                <Phone size={16} className="mt-0.5 shrink-0 text-accent" />
-                <span>+1 (555) 000-0000</span>
-              </li>
-              <li className="flex items-start gap-2 text-sm">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-accent" />
-                <span>123 Design District<br />New York, NY 10001</span>
-              </li>
-            </ul>
+          <div className="flex items-start gap-2">
+            <MapPin size={16} className="mt-0.5 shrink-0 text-primary-container" />
+            <span className="font-sans text-base text-white/40">
+              Kochi, Kerala, India
+            </span>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm">
-          &copy; {new Date().getFullYear()} Arteria. All rights reserved.
+        {/* Bottom bar */}
+        <div className="col-span-12 border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between">
+          <p className="font-sans text-base text-white/40">
+            &copy; {new Date().getFullYear()} Arteria Home Interiors. All rights
+            reserved.
+          </p>
+          <div className="flex gap-8 mt-2 md:mt-0">
+            <a
+              href="#"
+              className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="font-sans text-base text-white/40 hover:text-primary-container transition-colors"
+            >
+              Terms of Service
+            </a>
+          </div>
         </div>
       </div>
     </footer>

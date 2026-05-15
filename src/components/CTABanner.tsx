@@ -7,48 +7,35 @@ interface CTABannerProps {
   description?: string;
   primaryCTA?: string;
   primaryHref?: string;
-  secondaryCTA?: string;
-  secondaryHref?: string;
 }
 
 export function CTABanner({
-  headline = "Ready to Transform Your Space?",
-  description = "Let's create something extraordinary together. Book a free consultation and take the first step toward your dream interior.",
-  primaryCTA = "Book Free Consultation",
+  headline = "Experience Precision Firsthand",
+  description = "Visit our studio or book a free consultation to witness the intersection of architectural rigor and interior artistry.",
+  primaryCTA = "Book a Consultation",
   primaryHref = "#contact",
-  secondaryCTA = "View Our Portfolio",
-  secondaryHref = "#portfolio",
 }: CTABannerProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-primary text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto"
+    <section className="w-full bg-charcoal py-16 md:py-[120px] px-6 md:px-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mx-auto max-w-[1440px] flex flex-col items-center text-center"
+      >
+        <h2 className="font-serif text-[48px] leading-[52px] md:text-[80px] md:leading-[88px] md:-tracking-[0.02em] font-medium text-white mb-8">
+          {headline}
+        </h2>
+        <p className="font-sans text-lg leading-7 text-white/70 max-w-2xl mb-16">
+          {description}
+        </p>
+        <a
+          href={primaryHref}
+          className="bg-white text-charcoal px-12 py-5 font-sans text-xs font-bold uppercase tracking-widest hover:bg-primary-container transition-colors duration-500"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">
-            {headline}
-          </h2>
-          <p className="mt-4 text-white/70 text-lg">{description}</p>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={primaryHref}
-              className="rounded-full bg-accent px-8 py-3 text-sm font-medium text-white hover:bg-accent-light transition-colors"
-            >
-              {primaryCTA}
-            </a>
-            <a
-              href={secondaryHref}
-              className="rounded-full border border-white/30 px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors"
-            >
-              {secondaryCTA}
-            </a>
-          </div>
-        </motion.div>
-      </div>
+          {primaryCTA}
+        </a>
+      </motion.div>
     </section>
   );
 }

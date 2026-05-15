@@ -5,16 +5,45 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #fafaf8;
-  --color-foreground: #1a1a1a;
-  --color-primary: #1a1a2e;
-  --color-accent: #c9a96e;
-  --color-accent-light: #dfc89e;
-  --color-muted: #6b7280;
-  --color-border: #e5e5e5;
-  --font-sans: var(--font-sans);
-  --font-serif: var(--font-playfair);
-  --font-heading: var(--font-sans);
+  /* Stitch Design System Colors */
+  --color-background: #fcf9f8;
+  --color-foreground: #1b1c1c;
+  --color-primary: #006b5e;
+  --color-primary-foreground: #ffffff;
+  --color-primary-container: #00c7b1;
+  --color-secondary: #006a69;
+  --color-secondary-foreground: #ffffff;
+  --color-secondary-container: #90f0ee;
+  --color-accent: #006b5e;
+  --color-accent-light: #61fae2;
+  --color-muted: #3c4a46;
+  --color-muted-foreground: #6b7a76;
+  --color-border: #e5e2e1;
+  --color-stone: #EAE7DF;
+  --color-charcoal: #1A1A1A;
+  --color-surface: #fcf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-variant: #e5e2e1;
+  --color-inverse-surface: #303030;
+  --color-inverse-foreground: #f3f0ef;
+  --color-outline: #6b7a76;
+  --color-outline-variant: #bacac5;
+
+  /* Typography */
+  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-serif: "EB Garamond", serif;
+
+  /* Sharp corners — design system specifies 0px radius */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+  --radius: 0;
+
+  /* ShadCN compatibility */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -32,100 +61,88 @@
   --color-input: var(--input);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+}
+
+:root {
+  --background: #fcf9f8;
+  --foreground: #1b1c1c;
+  --card: #ffffff;
+  --card-foreground: #1b1c1c;
+  --popover: #ffffff;
+  --popover-foreground: #1b1c1c;
+  --primary: #006b5e;
+  --primary-foreground: #ffffff;
+  --secondary: #006a69;
+  --secondary-foreground: #ffffff;
+  --muted: #e5e2e1;
+  --muted-foreground: #6b7a76;
+  --accent: #006b5e;
+  --accent-foreground: #ffffff;
+  --destructive: #ba1a1a;
+  --border: #e5e2e1;
+  --input: #1b1c1c;
+  --ring: #006b5e;
+  --radius: 0;
+}
+
+.dark {
+  --background: #1b1c1c;
+  --foreground: #f3f0ef;
+  --card: #303030;
+  --card-foreground: #f3f0ef;
+  --popover: #303030;
+  --popover-foreground: #f3f0ef;
+  --primary: #3addc6;
+  --primary-foreground: #004d44;
+  --secondary: #76d6d4;
+  --secondary-foreground: #00504f;
+  --muted: #3c4a46;
+  --muted-foreground: #bacac5;
+  --accent: #3addc6;
+  --accent-foreground: #004d44;
+  --destructive: #ffdad6;
+  --border: #3c4a46;
+  --input: #bacac5;
+  --ring: #3addc6;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: var(--color-accent);
+  background-color: #006b5e;
   color: white;
 }
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+::-webkit-scrollbar-track {
+  background: #fcf9f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #006b5e;
+}
+
+/* No-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @layer base {
@@ -134,8 +151,5 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
   }
 }
